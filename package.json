@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --base-href /eco-comunidad/",
+    "deploy": "npm run build:gh-pages; npx angular-cli-ghpages --dir=dist/eco-comunidad/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -24,6 +26,7 @@
     "@angular/build": "^21.2.10",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.0",
+    "angular-cli-ghpages": "^3.0.3",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
