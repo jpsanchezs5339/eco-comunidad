@@ -1,0 +1,22 @@
+<main class="page">
+	<header class="topbar">
+		<h1>Escaneo IA</h1>
+		<a class="link" routerLink="/inicio">Volver</a>
+	</header>
+
+	<section class="scan-view card">
+		<div class="scanner-box" [class.active]="isScanning">
+			<span class="scanner-label">Detectando material...</span>
+		</div>
+		<p class="subtitle">{{ tip }}</p>
+		<button class="btn btn-primary" [disabled]="isScanning" (click)="runScan()">
+			{{ isScanning ? 'Escaneando...' : 'Escanear ahora' }}
+		</button>
+	</section>
+
+	<nav class="bottom-nav">
+		<a routerLink="/inicio">Inicio</a>
+		<a routerLink="/escanear" class="active">Escanear</a>
+		<a routerLink="/impacto">Impacto</a>
+	</nav>
+</main>

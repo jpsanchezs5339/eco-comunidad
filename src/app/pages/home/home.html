@@ -1,0 +1,69 @@
+<main class="page">
+	<header class="topbar">
+		<h1>Eco Comunidad</h1>
+		<a class="link" routerLink="/impacto">Impacto</a>
+	</header>
+
+	<section class="hero card">
+		<p class="eyebrow">Bienvenido</p>
+		<h2>{{ userName }}</h2>
+		<p>Tus acciones sostienen el futuro ambiental de la comunidad.</p>
+	</section>
+
+	<section class="grid-2">
+		<article class="card stat-card">
+			<p>Total reciclado</p>
+			<h3>{{ stats.totalKg | number : '1.0-0' }} kg</h3>
+		</article>
+		<article class="card stat-card">
+			<p>Items procesados</p>
+			<h3>{{ stats.totalItems | number : '1.0-0' }}</h3>
+		</article>
+	</section>
+
+	<section class="card ods-card">
+		<p class="eyebrow">Compromiso ODS 11</p>
+		<h3>Ciudades y comunidades sostenibles</h3>
+		<p>
+			Nuestro compromiso es fortalecer la gestion local de residuos, reducir puntos criticos
+			y mantener espacios comunitarios mas limpios y resilientes.
+		</p>
+		<ul class="info-list">
+			<li>Meta local: separar correctamente el 68% de residuos reciclables este trimestre.</li>
+			<li>Linea de accion: educacion ambiental casa a casa y rutas de recoleccion limpia.</li>
+			<li>Resultado esperado: menos residuos en vias y mayor aprovechamiento de materiales.</li>
+		</ul>
+	</section>
+
+	<section class="actions card">
+		<h3>Acciones rapidas</h3>
+		<div class="action-row">
+			<a class="btn btn-primary" routerLink="/escanear">Iniciar escaneo</a>
+			<a class="btn" routerLink="/puntos-entrega">Puntos de entrega</a>
+		</div>
+	</section>
+
+	<section class="card info-panel">
+		<h3>Informacion util para hoy</h3>
+		<div class="info-grid">
+			<article>
+				<h4>Que materiales aceptar</h4>
+				<p>Plastico limpio, carton seco, vidrio sin residuos y metales sin restos organicos.</p>
+			</article>
+			<article>
+				<h4>Antes de entregar</h4>
+				<p>Enjuaga envases, aplana cajas y separa tapas para mejorar la calidad del reciclaje.</p>
+			</article>
+			<article>
+				<h4>Impacto estimado</h4>
+				<p>Con el acumulado actual, la comunidad evita emisiones y reduce uso de agua potable.</p>
+			</article>
+		</div>
+	</section>
+
+	<nav class="bottom-nav">
+		<a routerLink="/inicio" class="active">Inicio</a>
+		<a routerLink="/escanear">Escanear</a>
+		<a routerLink="/impacto">Impacto</a>
+	</nav>
+</main>

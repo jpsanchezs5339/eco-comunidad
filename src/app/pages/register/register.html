@@ -1,0 +1,34 @@
+<main class="auth-layout">
+	<section class="auth-card">
+		<h1>Crear cuenta</h1>
+		<p class="subtitle">Sumate a la red de reciclaje de tu vereda.</p>
+
+		<form class="form" (ngSubmit)="register()">
+			<label for="name">Nombre completo</label>
+			<input id="name" name="name" type="text" [(ngModel)]="name" placeholder="Ej. Juan Perez" />
+
+			<label for="email">Correo electronico</label>
+			<input id="email" name="email" type="email" [(ngModel)]="email" placeholder="tu-correo@ejemplo.com" />
+
+			<label for="password">Contrasena</label>
+			<input id="password" name="password" type="password" [(ngModel)]="password" />
+
+			<label for="confirmPassword">Confirmar contrasena</label>
+			<input id="confirmPassword" name="confirmPassword" type="password" [(ngModel)]="confirmPassword" />
+
+			<label class="checkbox-row">
+				<input name="terms" type="checkbox" [(ngModel)]="acceptedTerms" />
+				<span>Acepto los terminos de sostenibilidad y privacidad.</span>
+			</label>
+
+			<p class="error" *ngIf="error">{{ error }}</p>
+
+			<button type="submit" class="btn btn-primary">Crear cuenta</button>
+		</form>
+
+		<p class="hint">
+			Ya tienes cuenta?
+			<a routerLink="/login">Iniciar sesion</a>
+		</p>
+	</section>
+</main>

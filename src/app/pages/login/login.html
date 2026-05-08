@@ -1,0 +1,23 @@
+<main class="auth-layout">
+	<section class="auth-card">
+		<h1>Eco Comunidad</h1>
+		<p class="subtitle">Ingresa para continuar con el reciclaje comunitario.</p>
+
+		<form class="form" (ngSubmit)="login()">
+			<label for="email">Correo electronico</label>
+			<input id="email" name="email" type="email" [(ngModel)]="email" placeholder="tu-correo@ejemplo.com" />
+
+			<label for="password">Contrasena</label>
+			<input id="password" name="password" type="password" [(ngModel)]="password" placeholder="Opcional" />
+
+			<p class="error" *ngIf="error">{{ error }}</p>
+
+			<button type="submit" class="btn btn-primary">Entrar</button>
+		</form>
+
+		<p class="hint">
+			Puedes ingresar con cualquier correo.
+			<a routerLink="/registro">Crear cuenta</a>
+		</p>
+	</section>
+</main>

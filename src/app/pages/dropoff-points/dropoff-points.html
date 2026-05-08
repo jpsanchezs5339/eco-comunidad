@@ -1,0 +1,28 @@
+<main class="page">
+	<header class="topbar">
+		<h1>Puntos de entrega</h1>
+		<a class="link" routerLink="/inicio">Inicio</a>
+	</header>
+
+	<section class="card">
+		<p>Centros activos para reciclar en tu zona.</p>
+	</section>
+
+	<section class="point-list">
+		<article class="card" *ngFor="let point of points">
+			<div class="point-head">
+				<h3>{{ point.name }}</h3>
+				<span class="badge" [class.badge-open]="point.open">{{ point.open ? 'Abierto' : 'Cerrado' }}</span>
+			</div>
+			<p>{{ point.distance }}</p>
+			<p>{{ point.schedule }}</p>
+			<p class="muted">Materiales: {{ point.materials.join(', ') }}</p>
+		</article>
+	</section>
+
+	<nav class="bottom-nav">
+		<a routerLink="/inicio">Inicio</a>
+		<a routerLink="/escanear">Escanear</a>
+		<a routerLink="/impacto">Impacto</a>
+	</nav>
+</main>

@@ -1,0 +1,74 @@
+<main class="page">
+	<header class="topbar">
+		<h1>Impacto colectivo</h1>
+		<a class="link" routerLink="/inicio">Inicio</a>
+	</header>
+
+	<section class="card">
+		<p class="eyebrow">Meta trimestral</p>
+		<h2>{{ progressPercent() }}%</h2>
+		<div class="progress-track">
+			<div class="progress-fill" [style.width.%]="progressPercent()"></div>
+		</div>
+		<p class="muted">Avance de la meta comunitaria de 1800 kg recuperados.</p>
+	</section>
+
+	<section class="card ods-card">
+		<p class="eyebrow">Compromiso ODS 11</p>
+		<h3>Compromiso activo de la vereda</h3>
+		<p>
+			Alineamos nuestras acciones con el ODS 11 para mejorar la gestion de residuos,
+			proteger el espacio publico y construir una comunidad mas habitable.
+		</p>
+		<div class="pill-row">
+			<span class="impact-pill">Separacion en fuente</span>
+			<span class="impact-pill">Educacion comunitaria</span>
+			<span class="impact-pill">Rutas de entrega limpia</span>
+		</div>
+	</section>
+
+	<section class="grid-2">
+		<article class="card stat-card">
+			<p>Total kg</p>
+			<h3>{{ stats.totalKg | number : '1.0-0' }}</h3>
+		</article>
+		<article class="card stat-card">
+			<p>CO2 evitado</p>
+			<h3>{{ stats.co2KgSaved | number : '1.0-0' }} kg</h3>
+		</article>
+	</section>
+
+	<section class="grid-2">
+		<article class="card stat-card">
+			<p>Agua ahorrada</p>
+			<h3>{{ stats.waterLitersSaved | number : '1.0-0' }} L</h3>
+		</article>
+		<article class="card stat-card">
+			<p>Puntos comunitarios</p>
+			<h3>{{ stats.points | number : '1.0-0' }}</h3>
+		</article>
+	</section>
+
+	<section class="card">
+		<h3>Distribucion por material</h3>
+		<div class="material" *ngFor="let material of stats.materials">
+			<span>{{ material.material }}</span>
+			<strong>{{ material.kg | number : '1.0-0' }} kg</strong>
+		</div>
+	</section>
+
+	<section class="card info-panel">
+		<h3>Lectura del impacto</h3>
+		<ul class="info-list">
+			<li>Mayor participacion en materiales de carton y plastico durante esta semana.</li>
+			<li>Las jornadas con educacion puerta a puerta aumentan el material limpio recibido.</li>
+			<li>El siguiente reto es mejorar la recuperacion de vidrio y metales livianos.</li>
+		</ul>
+	</section>
+
+	<nav class="bottom-nav">
+		<a routerLink="/inicio">Inicio</a>
+		<a routerLink="/escanear">Escanear</a>
+		<a routerLink="/impacto" class="active">Impacto</a>
+	</nav>
+</main>

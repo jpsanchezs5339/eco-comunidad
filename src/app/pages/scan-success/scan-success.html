@@ -1,0 +1,14 @@
+<main class="page">
+	<section class="card success-card">
+		<p class="eyebrow">Escaneo exitoso</p>
+		<h1>Material identificado</h1>
+		<h2>{{ lastScan?.material || 'Plastico' }}</h2>
+		<p>Confianza: {{ lastScan?.confidence || 0 }}%</p>
+		<p>Puntos de comunidad acumulados: {{ communityPoints }}</p>
+
+		<div class="action-row">
+			<a class="btn btn-primary" routerLink="/escanear">Escanear otro</a>
+			<a class="btn" routerLink="/impacto">Ver impacto</a>
+		</div>
+	</section>
+</main>
